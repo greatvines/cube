@@ -162,6 +162,24 @@ suite.addBatch(test_db.batch({
         assert.deepEqual(this.req.authorized, { admin: false });
       }
     }
+  },
+
+  "orgid_restricted_signed_request": {
+    topic: function(test_db) {
+      return authentication.authenticator("orgid_restricted_signed_request");
+    },
+    "calls auth_ok callback immediately if request.method is 'OPTIONS'": {
+      topic: successful_auth({type: "orgid_restricted_signed_request auth"}),
+      'decorates the request object': function(result){
+        assert.isObject(this.req.authorized);
+      },
+      'returns the authorization hash': function(result){
+        assert.deepEqual(result,              { admin: true });
+      },
+      'authorizes writes': function(result){
+        assert.deepEqual(this.req.authorized, { admin: true });
+      }
+    }
   }
 
 }));
