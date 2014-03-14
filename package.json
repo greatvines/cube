@@ -25,8 +25,6 @@
     "vows": "0.5.11",
     "websocket": "1.0.3",
     "websocket-server": "1.4.04",
-    "node-gyp": "~0.6.8",
-    "cookies": "0.3.1",
-    "bcrypt": "~0.7.7"
+    "node-gyp": "~0.6.8"
   }
 }
