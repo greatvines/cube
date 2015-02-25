@@ -1,6 +1,6 @@
 {
   "name": "cube",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "description": "A system for analyzing time series data using MongoDB and Node.",
   "keywords": [
     "time series"
